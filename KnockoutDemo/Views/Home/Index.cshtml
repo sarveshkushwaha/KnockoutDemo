@@ -1,0 +1,131 @@
+﻿@{
+	ViewBag.Title = "NavBar";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Header
+{
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">KO Demo Project</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-header">Nav header</li>
+							<li><a href="#">Separated link</a></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+}
+
+@*this will be body part*@
+<div class="container">
+
+	<!-- Main component for a primary marketing message or call to action -->
+	<div class="jumbotron">
+		<h1>Knockout example</h1>
+
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Knockout Obeservable</h3>
+					<span class="pull-right">
+						<!-- Tabs -->
+						<ul class="nav panel-tabs">
+							<li class="active"><a href="#Observable" data-toggle="tab">Observable</a></li>
+							<li><a href="#tab2" data-toggle="tab">Observable Arrays</a></li>
+							<li><a href="#tab3" data-toggle="tab">Dependent observable</a></li>
+
+						</ul>
+					</span>
+				</div>
+				<div class="panel-body">
+					<div class="tab-content">
+						<div class="tab-pane active" id="Observable">
+
+
+							<ul class="list-group">
+								<li class="list-group-item">Observable are functions
+								</li>
+
+								<li class="list-group-item">
+									<span class="label label-default ">Get Value from Obesrvable</span>
+
+									 viewModel.name();
+
+
+								</li>
+								<li class="list-group-item">
+									<span class="label label-default ">Set Value In Obesrvable</span>
+
+									viewModel.name("sarvesh");
+								</li>
+							</ul>
+
+
+
+							<form class="form-inline">
+								  <span data-bind="text: name"></span>
+
+
+								<div class="form-group">
+									<div class="input-group" style="width: 220px;">
+										<span class="input-group-addon">Name</span>
+																					  
+										<input type="text" class="form-control " placeholder="Name" data-bind="value: name">
+
+									</div>
+								</div>
+
+								@*<div class="form-group"><input type="text" class="form-control" placeholder="Works with" style="width: 100px;"/></div>*@
+
+								@*<button type="button" class="btn btn-primary btn-sm" data-bind="click: changeName">change name </button>*@
+
+							</form>
+						</div>
+						<div class="tab-pane" id="tab2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+						<div class="tab-pane" id="tab3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+						<div class="tab-pane" id="tab4">
+							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+							Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@section Footer
+{
+
+}
