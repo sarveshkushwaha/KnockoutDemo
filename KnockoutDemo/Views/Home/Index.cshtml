@@ -60,7 +60,7 @@
 						<!-- Tabs -->
 						<ul class="nav panel-tabs">
 							<li class="active"><a href="#Observable" data-toggle="tab">Observable</a></li>
-							<li><a href="#tab2" data-toggle="tab">Observable Arrays</a></li>
+							<li><a href="#ObservableArrayDiv" data-toggle="tab">Observable Arrays</a></li>
 							<li><a href="#tab3" data-toggle="tab">Dependent observable</a></li>
 
 						</ul>
@@ -110,7 +110,22 @@
 
 							</form>
 						</div>
-						<div class="tab-pane" id="tab2">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+						<div class="tab-pane" id="ObservableArrayDiv">
+
+							<div class="col-md-12">
+								<input type="text" data-bind="value: itemToAdd" />
+								  <button class="btn btn-primary btn-sm" data-bind="click: addItem">Add</button>
+
+							</div>
+							
+							<div class="col-md-3" style="padding-top:10px;">
+								<ul class="list-group" data-bind="foreach: items">
+  
+								 <li class="list-group-item"><span data-bind="text: name"/></li>
+
+								</ul>
+						</div>
+							</div>
 						<div class="tab-pane" id="tab3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
 						<div class="tab-pane" id="tab4">
 							Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
