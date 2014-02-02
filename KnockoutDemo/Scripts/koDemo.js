@@ -27,7 +27,18 @@ $(function () {
             }
         };
     
-    ko.applyBindings(ObservableArray, document.getElementById('ObservableArrayDiv'));
+    ko.applyBindings(ObservableArray, document.getElementById('ObservableArrayDiv')); //second parameter defines scope of model
+    //#endregion
+
+
+    //#region Computed Observables
+    var NameModel = { firstName : ko.observable("Sarvesh"), lastName : ko.observable("Kushwaha")};
+
+    NameModel.fullName = ko.computed(function() {
+        return this.firstName() +" "+ this.lastName();
+    }, NameModel);
+
+    ko.applyBindings(NameModel, document.getElementById('ComputedObservableDiv'))
 
     //#endregion
 
