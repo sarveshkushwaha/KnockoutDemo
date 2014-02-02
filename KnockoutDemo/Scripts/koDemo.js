@@ -13,9 +13,9 @@ $(function () {
     //#endregion
     
     //#region  Observable Arrays
-    var data = [{ name: "sarvesh" }, { name: "Akshay" }, { name: "isha" }, { name: "divya" }, { name: "priya" }];
-    
-    var ObservableArray = {
+    var data = [{ UserName: "sarvesh" }, { UserName: "Akshay" }, { UserName: "isha" }, { UserName: "divya" }, { UserName: "priya" }];
+        debugger;
+        var ObservableArray = {
             // data
             items: ko.observableArray(data),
             itemToAdd: ko.observable(""),
@@ -30,7 +30,6 @@ $(function () {
     ko.applyBindings(ObservableArray, document.getElementById('ObservableArrayDiv')); //second parameter defines scope of model
     //#endregion
 
-
     //#region Computed Observables
     var NameModel = { firstName : ko.observable("Sarvesh"), lastName : ko.observable("Kushwaha")};
 
@@ -42,8 +41,28 @@ $(function () {
 
     //#endregion
 
+    //#region Dynamically Get and set the data using Knockout and Web API
+    $.getJSON("api/GetDetailsApi", function (data) { //added this getjson to deal with real or dynamic data 
 
 
+        debugger;
+        var GetUserName = {
+            // data
+            items: ko.observableArray(data),
+            itemToAdd: ko.observable(""),
+
+            // behaviors
+            addItem: function () {
+                this.items.push({ name: this.itemToAdd() });
+                this.itemToAdd("");
+            }
+        };
+
+        ko.applyBindings(GetUserName, document.getElementById('KODataFeatures')); //second parameter defines scope of model
+
+    });
+
+    //#endregion
 
 
     //var viewModel = {
