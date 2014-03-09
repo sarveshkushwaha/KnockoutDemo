@@ -18,7 +18,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#BuiltInBindings">Built-In-Bindings</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -51,9 +51,9 @@
     </div>
 
 
-    <div class="row">
+    <div class="row" id="KObservable">
         <div class="col-md-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-primary panel-minheight">
                 <div class="panel-heading">
                     <h3 class="panel-title">Knockout Obeservable</h3>
                     <span class="pull-right">
@@ -111,7 +111,7 @@
                         </div>
                         <div class="tab-pane" id="ObservableArrayDiv">
 
-                            
+
                             <div class="col-md-12">
                                 <input type="text" data-bind="value: itemToAdd" />
                                 <button class="btn btn-primary btn-sm" data-bind="click: addItem">Add</button>
@@ -125,20 +125,104 @@
                             </div>
                         </div>
                         <div class="tab-pane" id="ComputedObservableDiv">
-                            
-                            First Name : <span data-bind="text:firstName"></span><br />
-                            Last Name : <span data-bind="text: lastName"></span><br />
-                            Full Name : <span data-bind="text: fullName"></span><br />
+                            First Name : <span data-bind="text: firstName"></span>
+                            <br />
+                            Last Name : <span data-bind="text: lastName"></span>
+                            <br />
+                            Full Name : <span data-bind="text: fullName"></span>
+                            <br />
                         </div>
-                        </div>
-                        
                     </div>
-                </div>
 
+                </div>
             </div>
+
+        </div>
+    </div>
+
+
+    <div class="row" id="BuiltInBindings">
+        <div class="col-md-12">
+            <div class="panel panel-primary panel-minheight">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Knockout Built In Bindings</h3>
+                    <span class="pull-right">
+                        <!-- Tabs -->
+                        <ul class="nav panel-tabs">
+                            <li class="active"><a href="#BindingTextAndApperanceSection" data-toggle="tab">Text and Apperance</a></li>
+                            <li><a href="#ControlFlowBinding" data-toggle="tab">Control flow</a></li>
+                            <li><a href="#" data-toggle="tab">Forms</a></li>
+
+                        </ul>
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="BindingTextAndApperanceSection">
+
+                            <ol>
+                                <li>
+                                    <strong>Visible </strong>Binding
+                                    <img src="~/fonts/SH.jpg" data-bind="visible: ShowItOrHideIt" />
+                                    <a class="btn btn-primary" id="ShowMeOrHideMe">Show Me or Hide Me</a>
+                                </li>
+                                <li>
+                                    <strong>Text</strong> Binding : 
+                                    <p data-bind="text: TextBinding"></p>
+                                </li>
+                                <li>
+                                    <strong>HTML</strong>  Binding :  
+                                    <p data-bind="html: HtmlBinding"></p>
+                                </li>
+                                <li>
+                                    <strong>CSS</strong> Binding
+                                    <p data-bind="css: CssBinding">I am above 80</p>
+                                </li>
+                                <li>
+                                    <strong>Style</strong> Binding
+                                    <p data-bind="style: { color: StyleBinding }">Make me Blue </p>
+                                </li>
+                                <li>
+                                    <strong>Attribute</strong> Binding <a data-bind="attr: { href: AttrBindingUrl, target: AttrBindingTarget }">My blog link</a>
+                                </li>
+                            </ol>
+
+                        </div>
+                         <div class="tab-pane" id="ControlFlowBinding">
+
+                         <label><input type="checkbox" data-bind="checked: displayMessage" /> Control flow Binding Using IF (checkbox check then show) :Display  message</label>
+                          <div data-bind="if: displayMessage"> Here is my message.</div>
+
+                             
+                             <div >
+                                 
+                                 <span> <strong>Foreach Binding :</strong> To iterate any collection we can use KO control flow's foreach</span>
+                                 <ul data-bind="foreach: ForeachBinding">
+                                     <li data-bind="text: Name"></li>
+                                 </ul>
+
+                                  knockout commant based syntax for control flow .
+                                 by using these tags KO creates Virtual element and KO understands these and Binds according to synatx.
+                                 <ol>
+                                 <!-- ko foreach :ForeachBinding --> 
+                                 <li data-bind="text: Name"></li>
+                                  <!-- /ko --> 
+                                     </ol>
+                             </div>
+
+                            
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
+
 
 @section Footer
 {

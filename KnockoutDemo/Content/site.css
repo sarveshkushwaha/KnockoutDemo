@@ -1,4 +1,9 @@
 ﻿/*Panel tabs*/
+
+.panel-minheight
+{
+    min-height:400px;
+}
 .panel-tabs {
     position: relative;
     bottom: 30px;

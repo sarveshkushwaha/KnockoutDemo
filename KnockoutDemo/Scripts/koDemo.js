@@ -22,7 +22,7 @@ $(function () {
 
             // behaviors
             addItem: function () {
-                this.items.push({ name: this.itemToAdd() });
+                this.items.push({ UserName: this.itemToAdd() });
                 this.itemToAdd("");
             }
         };
@@ -40,11 +40,55 @@ $(function () {
     ko.applyBindings(NameModel, document.getElementById('ComputedObservableDiv'))
 
     //#endregion
+    
+    //#region Built In Bindings Type: Text and Apperance
+
+    var TextandpApperanceModel = {
+        
+        ShowItOrHideIt: ko.observable(true), //its for visible Binding , true makes assoicated DOM element intially visible.
+        TextBinding: ko.observable("Show this line at associalted DOM element"),
+        HtmlBinding: ko.observable("<strong>Make It Bold</strong>"),  //Take care of HTMl Encoding ,otherwise I will hack you :P 
+        Age: ko.observable(80),   //If your are above 80 then css should be RED  :P 
+        StyleBinding: ko.observable('Blue'), // We can set the style too 
+        AttrBindingUrl: ko.observable('http://sarveshkushwaha.blogspot.com'), //setting the attribute href and target of an anchor 
+        AttrBindingTarget: ko.observable('_blank'),
+            
+
+    };
+    TextandpApperanceModel.CssBinding = ko.computed(function () {
+        return this.Age() > 75 ? "alert alert-danger" : "alert alert-success";
+
+    }, TextandpApperanceModel);
+    $('#ShowMeOrHideMe').click(function () {
+        var clicks = $(this).data('clicks');
+        if (clicks) {
+            TextandpApperanceModel.ShowItOrHideIt(true);
+            
+        } else {
+            TextandpApperanceModel.ShowItOrHideIt(false);
+        }
+        $(this).data("clicks", !clicks);
+    });
+    ko.applyBindings(TextandpApperanceModel, document.getElementById('BindingTextAndApperanceSection'));
+
+    //#endregion
+
+
+    //#region Control flow
+    
+    var arrayForech = [{ Name: "sarvesh" }, { Name: "isha" }, { Name: "akshay" }, { Name: "nitish" }];
+    var ControlFlowBindingModel = {
+        displayMessage: ko.observable(false),
+        ForeachBinding: ko.observable(arrayForech),
+        WithBindingName:ko.observable("Sarvesh")
+
+    };
+   
+    ko.applyBindings(ControlFlowBindingModel, document.getElementById('ControlFlowBinding'))
+    //#endregion
 
     //#region Dynamically Get and set the data using Knockout and Web API
     $.getJSON("api/GetDetailsApi", function (data) { //added this getjson to deal with real or dynamic data 
-
-
         debugger;
         var GetUserName = {
             // data
@@ -57,8 +101,7 @@ $(function () {
                 this.itemToAdd("");
             }
         };
-
-        ko.applyBindings(GetUserName, document.getElementById('KODataFeatures')); //second parameter defines scope of model
+       // ko.applyBindings(GetUserName, document.getElementById('KODataFeatures')); //second parameter defines scope of model
 
     });
 
